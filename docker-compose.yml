@@ -22,12 +22,11 @@ services:
       - 8000
     depends_on:
       - db
-    entrypoint: /wsgi-entrypoint.sh
+    command: /wsgi-entrypoint.sh
 
   nginx:
     build:
       context: docker/nginx
-      dockerfile: Dockerfile
     ports:
       - 80:80
     volumes:
@@ -39,6 +38,24 @@ services:
     depends_on:
       - db
       - api
+
+  redis:
+    image: redis:alpine
+    expose:
+      - 6379
+
+  celery:
+    build:
+      context: .
+      dockerfile: docker/backend/Dockerfile
+    volumes:
+      - ./src:/celery
+    depends_on:
+      - redis
+      - api
+    env_file:
+      - .env
+    command: /celery.sh
 
 volumes:
   static:

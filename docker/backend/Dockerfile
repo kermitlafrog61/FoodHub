@@ -11,6 +11,7 @@ RUN pip install --upgrade pip && \
     pip install -r requirements.txt
 
 COPY src/ .
-COPY docker/backend/wsgi-entrypoint.sh /
+COPY docker/backend/ /
 
 RUN chmod +x /wsgi-entrypoint.sh
+RUN chmod +x /celery.sh
