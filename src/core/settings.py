@@ -134,7 +134,7 @@ CELERY_TIMEZONE = 'UTC'
 
 CELERY_BEAT_SCHEDULE = {
     'send': {
-        'task': 'core.celery.send_test_email',
+        'task': 'core.tasks.send_test_email',
         'schedule': crontab(minute=1, hour=10),
         'options': {
             'expires': 15.0,

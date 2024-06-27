@@ -11,3 +11,5 @@ __pycache__/
 # Django
 static/
 media/
+celerybeat-schedule
+poetry.lock
