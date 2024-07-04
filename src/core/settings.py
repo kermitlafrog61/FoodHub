@@ -29,10 +29,12 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
     'debug_toolbar',
+    'django_filters',
     'corsheaders',
 
     # my apps
     'apps.users',
+    'apps.products',
 ]
 
 MIDDLEWARE = [
@@ -166,3 +168,10 @@ AUTH_USER_MODEL = 'users.CustomUser'
 # CORS headings
 
 CORS_ALLOW_ALL_ORIGINS = DEBUG
+
+
+# REST Framework config
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
