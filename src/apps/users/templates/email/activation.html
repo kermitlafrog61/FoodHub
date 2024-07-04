@@ -1,0 +1,28 @@
+{% load i18n %}
+
+{% block subject %}
+{% blocktrans %}Account activation on FoodHub!{% endblocktrans %}
+{% endblock subject %}
+
+{% block text_body %}
+{% blocktrans %}You're receiving this email because you need to finish activation process on FoodHub.{% endblocktrans %}
+
+{% trans "Your activation code is:" %}
+{{ token }}
+
+{% trans "Thanks for using our site!" %}
+
+{% blocktrans %}The FoodHub team{% endblocktrans %}
+{% endblock text_body %}
+
+{% block html_body %}
+<p>{% blocktrans %}You're receiving this email because you need to finish activation process on FoodHub.{% endblocktrans %}</p>
+
+<p>{% trans "Your activation code is:" %}</p>
+<p>{{ token }}</a></p>
+
+<p>{% trans "Thanks for using our site!" %}</p>
+
+<p>{% blocktrans %}The FoodHub team{% endblocktrans %}</p>
+
+{% endblock html_body %}

@@ -3,10 +3,10 @@ name = "FoodHub"
 version = "0.1.0"
 description = ""
 authors = ["kermitlafrog61 <islam.alybaev61@gmail.com>"]
-readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "3.10.x"
 django = "4.2"
 djangorestframework = "3.15.2"
 psycopg2-binary = "2.9.9"
@@ -15,7 +15,9 @@ celery = "5.4.0"
 drf-yasg = "1.21.7"
 djangorestframework-simplejwt = "5.3.1"
 django-debug-toolbar = "4.3.0"
-redis = "^5.0.6"
+redis = "5.0.6"
+django-templated-mail = "^1.1.1"
+django-cors-headers = "^4.4.0"
 
 
 [build-system]

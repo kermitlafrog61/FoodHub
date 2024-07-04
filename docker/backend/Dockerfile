@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.10-slim
 
 # Declaring ENV Variables
 ENV PYTHONFAULTHANDLER=1 \
@@ -21,7 +21,6 @@ WORKDIR /app
 RUN pip install poetry==${POETRY_VERSION}
 
 COPY src/poetry.lock src/pyproject.toml /app/
-RUN touch README.md
 RUN poetry install --no-ansi
 
 # Adding all neccesary scripts to be runable
